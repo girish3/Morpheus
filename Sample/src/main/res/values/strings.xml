@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Morpheus</string>
+    <string name="para">Check your email for a confirmation. We have sent all the details for you to reach the destination safely.</string>
+    <string name="dialog_transition">dialog_transition</string>
 </resources>

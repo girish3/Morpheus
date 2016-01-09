@@ -1,4 +1,4 @@
-package github.girish3.morpheus;
+package github.girish3.sample;
 
 import org.junit.Test;
 

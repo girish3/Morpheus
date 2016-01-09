@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@color/translucent_black_i"
+    tools:context="github.girish3.sample.DialogActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/dialog_layout"
+        android:transitionName="@string/dialog_transition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:background="@android:color/white">
+
+            <TextView
+                android:id="@+id/headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:paddingLeft="20dp"
+                android:text="All Set!"
+                android:textSize="17dp"/>
+
+            <TextView
+                android:id="@+id/para"
+                android:layout_width="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@id/headline"
+                android:text="@string/para"/>
+
+            <!-- grey divider -->
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/translucent_black_ii"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/para">
+            </View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/divider"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:textColor="@color/blue_i"
+                android:text="OK"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
