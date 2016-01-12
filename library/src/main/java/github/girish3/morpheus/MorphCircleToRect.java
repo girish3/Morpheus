@@ -8,6 +8,7 @@ import android.transition.ChangeBounds;
 import android.transition.TransitionValues;
 import android.view.View;
 import android.view.ViewGroup;
+import java.util.ArrayList;
 
 /**
  * Created by Girish on 07/01/16.
@@ -70,10 +71,36 @@ public class MorphCircleToRect extends ChangeBounds {
         Animator color_animator = ObjectAnimator.ofArgb(morpheusDrawable, morpheusDrawable.COLOR, endColor);
         Animator radius_animator = ObjectAnimator.ofInt(morpheusDrawable, morpheusDrawable.BORDER_RADIUS, endRadius);
 
+        ArrayList<Animator> animators = new ArrayList<>();
+
+        if (endValues.view instanceof ViewGroup) {
+            ViewGroup vg = (ViewGroup) endValues.view;
+            for (int i = 0; i < vg.getChildCount(); i++) {
+                View v = vg.getChildAt(i);
+                v.setAlpha(0f);
+                Animator anim = ObjectAnimator.ofFloat(v, "alpha", 1f);
+                animators.add(anim);
+            }
+        }
+
+        /*if (startValues.view instanceof ViewGroup) {
+            ViewGroup vg = (ViewGroup) endValues.view;
+            for (int i = 0; i < vg.getChildCount(); i++) {
+                View v = vg.getChildAt(i);
+                v.setAlpha(1f);
+                Animator anim = ObjectAnimator.ofFloat(v, "alpha", 0f);
+                animators.add(anim);
+            }
+        }*/
+
+        animators.add(animator);
+        animators.add(radius_animator);
+        animators.add(color_animator);
+
         AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(animator, radius_animator, color_animator);
+        animatorSet.playTogether(animators);
         animatorSet.setInterpolator(new FastOutSlowInInterpolator());
-        animatorSet.setDuration(500);
+        animatorSet.setDuration(400);
 
         return animatorSet;
     }
