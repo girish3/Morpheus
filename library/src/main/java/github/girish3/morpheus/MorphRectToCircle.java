@@ -20,6 +20,7 @@ public class MorphRectToCircle extends ChangeBounds {
     private int mStartColor;
     private int mEndColor;
     private int mStartRadius;
+    private static final int DEFAULT_DURATION = 1000;
 
     public MorphRectToCircle(int startColor, int endColor, int startRadius) {
         super();
@@ -96,7 +97,9 @@ public class MorphRectToCircle extends ChangeBounds {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(animators);
         animatorSet.setInterpolator(new FastOutSlowInInterpolator());
-        animatorSet.setDuration(400);
+
+        if (getDuration() != -1) animatorSet.setDuration(getDuration());
+        else animatorSet.setDuration(DEFAULT_DURATION);
 
         return animatorSet;
     }

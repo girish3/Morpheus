@@ -20,16 +20,7 @@ public class MorphCircleToRect extends ChangeBounds {
     private int mStartColor;
     private int mEndColor;
     private int mEndRadius;
-
-
-    /*public MorphCircleToRect() {
-        super();
-    }
-
-
-    public MorphCircleToRect(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }*/
+    private static final int DEFAULT_DURATION = 1000;
 
     public MorphCircleToRect(int startColor, int endColor, int endRadius) {
         super();
@@ -37,6 +28,14 @@ public class MorphCircleToRect extends ChangeBounds {
         mEndColor = endColor;
         mEndRadius = endRadius;
     }
+
+    /*public MorphCircleToRect() {
+        super();
+    }
+
+    public MorphCircleToRect(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }*/
 
     @Override
     public void captureStartValues(TransitionValues transitionValues) {
@@ -100,7 +99,9 @@ public class MorphCircleToRect extends ChangeBounds {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(animators);
         animatorSet.setInterpolator(new FastOutSlowInInterpolator());
-        animatorSet.setDuration(400);
+
+        if (getDuration() != -1) animatorSet.setDuration(getDuration());
+        else animatorSet.setDuration(DEFAULT_DURATION);
 
         return animatorSet;
     }
