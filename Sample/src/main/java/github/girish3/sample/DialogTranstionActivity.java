@@ -8,11 +8,11 @@ import android.view.View;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SampleActivity extends AppCompatActivity {
+public class DialogTranstionActivity extends AppCompatActivity {
 
     @OnClick(R.id.fab)
     void onFabClick(View view) {
-        Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(SampleActivity.this, view, getResources().getString(R.string.dialog_transition)).toBundle();
+        Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(DialogTranstionActivity.this, view, getResources().getString(R.string.dialog_transition)).toBundle();
         Intent intent = new Intent(this, DialogActivity.class);
         startActivity(intent, bundle);
     }

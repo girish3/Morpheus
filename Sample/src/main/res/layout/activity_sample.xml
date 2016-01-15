@@ -3,23 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="github.girish3.sample.SampleActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    tools:context=".DialogTranstionActivity">
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:transitionName="@string/dialog_transition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_media_play"
+        android:layout_margin="20dp"
+        android:src="@drawable/plus"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"/>
 
