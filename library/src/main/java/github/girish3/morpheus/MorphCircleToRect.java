@@ -17,10 +17,10 @@ public class MorphCircleToRect extends ChangeBounds {
 
     private static final String PROP_COLOR = "prop_color";
     private static final String PROP_BORDER_RADIUS = "prop_border_radius";
+    private static final int DEFAULT_DURATION = 1000;
     private int mStartColor;
     private int mEndColor;
     private int mEndRadius;
-    private static final int DEFAULT_DURATION = 1000;
 
     public MorphCircleToRect(int startColor, int endColor, int endRadius) {
         super();
@@ -76,21 +76,10 @@ public class MorphCircleToRect extends ChangeBounds {
             ViewGroup vg = (ViewGroup) endValues.view;
             for (int i = 0; i < vg.getChildCount(); i++) {
                 View v = vg.getChildAt(i);
-                v.setAlpha(0f);
-                Animator anim = ObjectAnimator.ofFloat(v, "alpha", 1f);
+                Animator anim = ObjectAnimator.ofFloat(v, "alpha", 0f, 1f);
                 animators.add(anim);
             }
         }
-
-        /*if (startValues.view instanceof ViewGroup) {
-            ViewGroup vg = (ViewGroup) endValues.view;
-            for (int i = 0; i < vg.getChildCount(); i++) {
-                View v = vg.getChildAt(i);
-                v.setAlpha(1f);
-                Animator anim = ObjectAnimator.ofFloat(v, "alpha", 0f);
-                animators.add(anim);
-            }
-        }*/
 
         animators.add(animator);
         animators.add(radius_animator);
