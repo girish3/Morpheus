@@ -8,11 +8,11 @@ import android.view.View;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DialogTranstionActivity extends AppCompatActivity {
+public class DialogTransitionActivity extends AppCompatActivity {
 
     @OnClick(R.id.fab)
     void onFabClick(View view) {
-        Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(DialogTranstionActivity.this, view, getResources().getString(R.string.dialog_transition)).toBundle();
+        Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(DialogTransitionActivity.this, view, getResources().getString(R.string.dialog_transition)).toBundle();
         Intent intent = new Intent(this, DialogActivity.class);
         startActivity(intent, bundle);
     }
@@ -20,7 +20,7 @@ public class DialogTranstionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sample);
+        setContentView(R.layout.activity_dialog_transition);
         ButterKnife.bind(this);
     }
 }
