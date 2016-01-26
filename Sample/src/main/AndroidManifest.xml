@@ -18,13 +18,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DialogTranstionActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name=".DialogTransitionActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".DialogActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".BasicMorphActivity" />
+        <activity
+            android:name=".BasicMorphActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MenuTransitionActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

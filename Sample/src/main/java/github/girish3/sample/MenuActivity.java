@@ -19,7 +19,12 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void openDialogTransition(View view) {
-        Intent intent = new Intent(this, DialogTranstionActivity.class);
+        Intent intent = new Intent(this, DialogTransitionActivity.class);
+        startActivity(intent);
+    }
+
+    public void openMenuTransition(View view) {
+        Intent intent = new Intent(this, MenuTransitionActivity.class);
         startActivity(intent);
     }
 }
